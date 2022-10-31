@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: python
+    tag: python-tech-trends
+  name: ubtech-trends
+  namespace: sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+      tag: alpine
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tag: alpine
+    spec:
+      containers:
+      - image: eldorado762/ubtech-trends:latest
+        imagePullPolicy: IfNotPresent
+        name: techtrends
+      # Expose the port the container is listening on.
+        ## For example, exposing the application port 6112 via TCP.
+        ports:
+        - containerPort: 3111
+          protocol: TCP
+        livenessProbe:
+           httpGet:
+             path: /healthz
+             port: 3111
+        readinessProbe:
+           httpGet:
+             path: /healthz
+             port: 3111
+        resources:
+        ## The resource requests guarantees that the desired amount 
+        ## CPU and memory is allocated for a pod. In this example, 
+        ## the pod will be allocated with 64 Mebibytes and 250 miliCPUs.
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+        ## The resource limits ensure that the application is not consuming 
+        ## more than the specified CPU and memory values. In this example, 
+        ## the pod will not surpass 128 Mebibytes and 500 miliCPUs.
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

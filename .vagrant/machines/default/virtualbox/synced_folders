@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/sam/Documents/DEVOPS/ubtechtrends/ubtech-trends","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
