@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: nginx
+    app: techtrends
     tag: alpine
   name: techtrends
   namespace: {{ .Values.namespace.name }}
@@ -10,7 +10,7 @@ spec:
   replicas: {{ .Values.replicaCount }} 
   selector:
     matchLabels:
-      app: nginx
+      app: techtrends
       tag: alpine
   strategy:
     rollingUpdate:
@@ -20,7 +20,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        app: techtrends
         tag: alpine
     spec:
       containers:

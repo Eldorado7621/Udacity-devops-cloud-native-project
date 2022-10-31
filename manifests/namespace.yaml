@@ -4,3 +4,5 @@ metadata:
   labels:
     tier: test
   name: sandbox
+spec: {}
+status: {}

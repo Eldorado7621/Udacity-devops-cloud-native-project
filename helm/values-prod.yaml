@@ -1,24 +1,16 @@
 namespace:
-  name: prod 
- 
+  name: prod
 service:
   port: 7111
-  type: ClusterIP
-
 image:
-  repository: eldorado762/ubtech-trends 
-  tag: 1.17.0
   pullPolicy: Always
 
-replicaCount: 5
-
-resources:
-  requests:
-    cpu: 350m
+resources: 
+  requests: 
     memory: 128Mi
+    CPU: 350m
   limits:
-    cpu: 500m
     memory: 256Mi
+    CPU: 500m
 
-configmap:
-  data: "version: 1.17.0"
+replicaCount: 5

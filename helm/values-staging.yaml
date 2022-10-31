@@ -1,24 +1,14 @@
 namespace:
-  name: staging 
- 
+  name: staging
 service:
   port: 5111
-  type: ClusterIP
-
-image:
-  repository: eldorado762/ubtech-trends 
-  tag: 1.18.0
-  pullPolicy: IfNotPresent
 
 replicaCount: 3
 
-resources:
-  requests:
-    cpu: 300m
+resources: 
+  requests: 
     memory: 90Mi
+    CPU: 300m
   limits:
-    cpu: 500m
     memory: 128Mi
-
-configmap:
-  data: "version: 1.18.0"
+    CPU: 500m
