@@ -4,7 +4,7 @@ description: Tech trends project4 manifests
 keywords:
 - python
 - techtrends 
-version: 3.7..0
+version: 3.7.0
 maintainers:
 - name: samuel 
   email: akinolasamuel762@gmail.com 
