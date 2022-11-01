@@ -15,4 +15,3 @@ spec:
     path: helm
     repoURL: https://github.com/Eldorado7621/project4
     targetRevision: HEAD
-  syncPolicy: {}
