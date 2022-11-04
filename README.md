@@ -1,6 +1,5 @@
 # Project 4 of the Udacity-Bosch DevOps Nanodegree program
 
-<hr>
 ## Overview
 
 1. Applying the best development practices to develop the status and health check endpoints for a TechTrends application.
